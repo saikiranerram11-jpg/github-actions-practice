@@ -1,0 +1,21 @@
+name: My First Pipeline
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v6
+
+      - name: Display files
+        run: ls -la
+
+      - name: Run Python application
+        run: python app.py
+
+      - name: Pipeline completed
+        run: echo "Pipeline completed successfully!"
